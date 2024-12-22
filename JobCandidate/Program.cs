@@ -1,11 +1,17 @@
+using JobCandidate.Core.Abstract;
 using JobCandidate.Core.Context;
+using JobCandidate.Infrastructure.Repository;
+using JobCandidate.Infrastructure.Serice;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddDbContext<CandidateContext>(options =>
-        options.UseSqlite("Data Source=candidates.db"));
+        options.UseInMemoryDatabase("TestDatabase"));
+
+builder.Services.AddScoped<ICandidateRepository, CandidateRepository>();
+builder.Services.AddScoped<ICandidateService, CandidateService>();
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
