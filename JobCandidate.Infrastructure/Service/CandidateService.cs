@@ -5,7 +5,7 @@ using Microsoft.Extensions.Caching.Memory;
 
 namespace JobCandidate.Infrastructure.Serice;
 
-public class CandidateService(ICandidateRepository repository) : ICandidateService
+public class CandidateService(ICandidateRepository repository, IMemoryCache cache) : ICandidateService
 {
     public async Task<Candidate> AddOrUpdateCandidateAsync(CandidateDto candidateDto)
     {
@@ -14,7 +14,15 @@ public class CandidateService(ICandidateRepository repository) : ICandidateServi
             throw new ArgumentException("Email is required.");
         }
 
-        var candidate = await repository.GetByEmailAsync(candidateDto.Email);
+        // Check cache first
+        if (!cache.TryGetValue(candidateDto.Email, out Candidate candidate))
+        {
+            candidate = await repository.GetByEmailAsync(candidateDto.Email);
+            if (candidate != null)
+            {
+                cache.Set(candidateDto.Email, candidate);
+            }
+        }
 
         if (candidate != null)
         {
