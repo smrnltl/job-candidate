@@ -11,7 +11,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{B3C04EE0-8
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastructure", "{0621FA40-D7F8-4A98-9C1B-461FDBBAC7DF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JobCandidate.Infrastructure", "JobCandidate.Infrastructure\JobCandidate.Infrastructure.csproj", "{171E25CD-516E-42E8-A760-C7A53D180F40}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JobCandidate.Infrastructure", "JobCandidate.Infrastructure\JobCandidate.Infrastructure.csproj", "{171E25CD-516E-42E8-A760-C7A53D180F40}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JobCandidate.Tests", "JobCandidate.Tests\JobCandidate.Tests.csproj", "{AA711C9B-3924-40D1-BDA1-7186C9268391}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -31,6 +33,10 @@ Global
 		{171E25CD-516E-42E8-A760-C7A53D180F40}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{171E25CD-516E-42E8-A760-C7A53D180F40}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{171E25CD-516E-42E8-A760-C7A53D180F40}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AA711C9B-3924-40D1-BDA1-7186C9268391}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AA711C9B-3924-40D1-BDA1-7186C9268391}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AA711C9B-3924-40D1-BDA1-7186C9268391}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AA711C9B-3924-40D1-BDA1-7186C9268391}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
